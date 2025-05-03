@@ -206,3 +206,6 @@
    padding: 2px 2px 2px 2px;
    background-color:rgba(224, 224, 17, 0.856);
 }
+.ami{
+  break-before: always;
+}
