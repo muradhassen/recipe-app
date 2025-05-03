@@ -1,38 +1,208 @@
-.App {
+.topClass {
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  background: #cfbebe;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.searchBar {
+  display: flex;
+  gap: 10px;
+}
+
+.item {
+  flex: 1;
+  padding: 6px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.item:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+  outline: none;
+}
+
+.searchButton {
+  padding: 6px 20px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.searchButton:hover {
+  background-color: #0056b3;
+}
+.recipeList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+/* Base: 4 per row */
+.meal-item {
+  width: calc(25% - 20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Responsive image */
+.meal-item img {
+  width: 100%;
+  height: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Adjust text */
+.meal-item p {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.meal-item button {
+  padding: 6px 12px;
+  margin-bottom: 2em;
+  background-color: #4f46e5; /* Indigo */
   color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.App-link {
-  color: #61dafb;
+.meal-item button:hover {
+  background-color: #4338ca; /* Darker indigo */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.meal-item button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Medium screens (<= 1024px): 3 per row */
+@media (max-width: 1024px) {
+  .meal-item {
+    width: calc(33.33% - 20px);
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* Small screens (<= 768px): 2 per row */
+@media (max-width: 768px) {
+  .meal-item {
+    width: calc(50% - 20px);
   }
+}
+
+/* Extra small screens (<= 480px): 1 per row */
+@media (max-width: 480px) {
+  .meal-item {
+    width: 100%;
+  }
+}
+.recipe-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
+  background-color: #f8f9fa;
+  box-sizing: border-box;
+}
+
+.recipe-container img {
+  width: 400px;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-details {
+  max-width: 600px;
+  flex: 1;
+}
+
+.recipe-details button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.recipe-details button:hover {
+  background-color: #ff4757;
+}
+
+.recipe-details h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.recipe-details p {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: justify;
+  color: #555;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .recipe-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .recipe-details h1 {
+    font-size: 30px;
+  }
+
+  .recipe-details h4 {
+    font-size: 16px;
+  }
+
+  .recipe-details p {
+    font-size: 15px;
+  }
+}
+.head{
+  display: flex;
+  align-items:center ;
+  justify-content: center;
+  color: rgba(255, 0, 0, 0.562);
+}
+.myHead{
+  font-size: 32px;
+  margin-bottom: 16px;
+  color: #1f1207f8;
+   border: 1px solid black ;
+   border-radius: 10px;
+   display: inline;
+   padding: 2px 2px 2px 2px;
+   background-color:rgba(224, 224, 17, 0.856);
 }
