@@ -25,8 +25,6 @@ const Categories = () => {
   }, [mealid]);
 
   if (!info) return <p>Loading...</p>;
-
-  // Extract video ID from the YouTube URL
   const videoId = info.strYoutube?.split("v=")[1];
 
   return (
@@ -61,7 +59,7 @@ const Categories = () => {
 
             return ingredient?.trim() ? (
               <h4 key={i}>
-                {ingredient} : {measure}
+              {i+1} : {ingredient} : {measure}
               </h4>
             ) : null;
           })}
